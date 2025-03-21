@@ -56,7 +56,7 @@ const Header = () => {
         </Link>
         <Link href={"/"}>
           <li className="text-[1.2em] font-[600] cursor-pointer relative ">
-            Text analysis{" "}
+            Text to Speech{" "}
             <span
               className="absolute border-b-2 border-white w-0 bottom-0 left-0 transition-all analylink h-6"
               onClick={handleAnalyClick}
@@ -75,7 +75,7 @@ const Header = () => {
       </ul>
 
       <Button
-        styles={"bg-[#6ca7b2]"}
+        styles={"bg-[#6ca7b2] rounded-2xl"}
         onClick={() => router.push("/register/signup")}
       >
         Get started
