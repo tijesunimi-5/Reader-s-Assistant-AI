@@ -3,6 +3,7 @@ import React from "react";
 import Button from "./Button";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { FaBars } from "react-icons/fa";
 
 const Header = () => {
   const router = useRouter();
@@ -37,37 +38,37 @@ const Header = () => {
   };
 
   return (
-    <header className="flex justify-between mt-5 mx-2 px-5 py-2 fixed right-0 left-0 bg-[#3D3CC9] items-center rounded text-white shadow z-50">
+    <header className="flex justify-between mt-5 mx-2 px-5 py-2 fixed right-0 left-0 bg-[#3D3CC9] items-center rounded text-white shadow z-50 header">
       <h1 className="logo font-[800] scale-y-150 tracking-wide text-xl">
         Reader's Assisstant AI
       </h1>
 
-      <div className="blur w-full ml-[-20px] h-10 top-[-39px] absolute bg-transparent"></div>
+      <div className="blur 2xl:w-full 2xl:ml-[-20px] 2xl:h-10 2xl:top-[-39px] 2xl:absolute 2xl:bg-transparent"></div>
 
-      <ul className="flex justify-between items-center flex-row w-[300px]">
+      <ul className="2xl:flex 2xl:justify-between 2xl:items-center 2xl:flex-row 2xl:w-[300px] nav hidden">
         <Link href={"/"}>
-          <li className="text-[1.2em] font-[600] cursor-pointer relative ">
+          <li className="2xl:text-[1.2em] 2xl:font-[600] 2xl:cursor-pointer 2xl:relative ">
             Home{" "}
             <span
-              className="absolute border-b-2 border-white w-0 bottom-0 left-0 transition-all homelink h-6"
+              className="2xl:absolute 2xl:border-b-2 2xl:border-white 2xl:w-0 2xl:bottom-0 2xl:left-0 2xl:transition-all homelink 2xl:h-6"
               onClick={handleHomeclick}
             ></span>
           </li>
         </Link>
         <Link href={"/"}>
-          <li className="text-[1.2em] font-[600] cursor-pointer relative ">
+          <li className="2xl:text-[1.2em] 2xl:font-[600] 2xl:cursor-pointer 2xl:relative ">
             Text to Speech{" "}
             <span
-              className="absolute border-b-2 border-white w-0 bottom-0 left-0 transition-all analylink h-6"
+              className="2xl:absolute 2xl:border-b-2 2xl:border-white 2xl:w-0 2xl:bottom-0 2xl:left-0 2xl:transition-all analylink 2xl:h-6"
               onClick={handleAnalyClick}
             ></span>
           </li>
         </Link>
         <Link href={"/"}>
-          <li className="text-[1.2em] font-[600] cursor-pointer relative ">
+          <li className="2xl:text-[1.2em] 2xl:font-[600] 2xl:cursor-pointer 2xl:relative ">
             Q/A{" "}
             <span
-              className="absolute border-b-2 border-white w-0 bottom-0 left-0 transition-all profilelink h-6"
+              className="2xl:absolute 2xl:border-b-2 2xl:border-white 2xl:w-0 2xl:bottom-0 2xl:left-0 2xl:transition-all profilelink 2xl:h-6"
               onClick={handleProfileClick}
             ></span>
           </li>
@@ -75,11 +76,12 @@ const Header = () => {
       </ul>
 
       <Button
-        styles={"bg-[#6ca7b2] rounded-2xl"}
+        styles={"2xl:bg-[#6ca7b2] 2xl:rounded-2xl navBtn hidden 2xl:flex"}
         onClick={() => router.push("/register/signup")}
       >
         Get started
       </Button>
+      <FaBars className="2xl:hidden bar " />
     </header>
   );
 };

@@ -132,3 +132,105 @@ ul li:hover span {
   background: white;
   border: 1px solid #3D3CC9;
 }
+
+
+/*Responsiveness*/
+@media (max-width: 376px) {
+  body {
+    width: 375px;
+  }
+  .header {
+    width: 375px;
+    margin-left: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+  }
+  .logo {
+    font-size: 18px;
+  }
+  .nav {
+    display: none;
+  }
+  .navBtn {
+    display: none;
+  }
+  .bar {
+    display: block;
+    font-size: 25px;
+  }
+  .mainPage {
+    width: 375px;
+    height: 100vh;
+    overflow: hidden;
+    background: #3D3CC9;
+    position: relative;
+  }
+  .hero-img {
+    position: absolute;
+    bottom: 80px;
+  }
+  .hero-txt {
+    padding-top: 100px;
+    color: white;
+    font-size: 27px;
+    font-weight: 700;
+    margin-left: 20px;
+    position: relative;
+  }
+  .txt2 {
+    position: relative;
+    font-size: 18px;
+    color: white;
+    margin-top: -5px;
+    margin-left: 22px;
+  }
+  .social-div {
+    position: absolute;
+    bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+    color: white;
+    font-size: 28px;
+    margin-left: 62px;
+  }
+  .arrow {
+    position: absolute;
+    top: 95px;
+    left: 180px;
+    color: white;
+  }
+  .info-head {
+    text-align: start;
+    color: #3D3CC9;
+    font-weight: bold;
+    font-size: 24px;
+    padding-top: 80px;
+    padding-left: 12px;
+    width: 365px;
+    text-decoration: underline;
+  }
+  .info-div {
+    width: 370px;
+  }
+  .info-txt {
+    padding: 10px;
+    font-size: 19px;
+  }
+  .info-ul {
+    width: 300px;
+    margin-left: 28px;
+    list-style-type: disc;
+    font-size: 18px;
+  }
+  .info-img1 {
+    width: 550px;
+    margin-top: -40px;
+  }
+  .info-div2 {
+    
+  }
+}
+ 
