@@ -37,7 +37,7 @@ const QuestionA = () => {
 
       console.log("QnA model loaded successfully!");
       if (model) {
-        setLoading(false);
+        setLoading(false); return
       }
     };
     loadModel();
