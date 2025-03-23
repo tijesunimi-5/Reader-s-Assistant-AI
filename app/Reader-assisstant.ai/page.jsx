@@ -1,4 +1,6 @@
 'use client'
+import Guidelines from '@/components/Guidelines'
+import QuestionA from '@/components/QuestionA'
 import Sidebar from '@/components/Sidebar'
 import TextAudio from '@/components/Text-to-audio'
 import UserProfile from '@/components/UserProfile'
@@ -10,7 +12,9 @@ const page = () => {
       <Sidebar />
       <TextAudio />
       <UserProfile />
-      <div className='w-full ml-[500px] h-[100vh]'></div>
+      <QuestionA />
+      <Guidelines />
+      {/* <div className='w-full ml-[500px] h-[100vh]'></div> */}
     </div>
   );
 }

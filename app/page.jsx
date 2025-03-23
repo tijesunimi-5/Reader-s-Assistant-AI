@@ -88,7 +88,7 @@ const page = () => {
 
       <div className="relative  w-full flex flex-col justify-center bg-[#F5F5F5]">
         <div className="flex flex-col w-full relative">
-          <h2 className="text-[#3D3CC9] text-3xl font-[700] underline mt-32 w-[500px] text-center ml-[480px] ">
+          <h2 className="text-[#3D3CC9] text-3xl font-[700] underline mt-32 w-[500px] items-start ml-[50px] ">
             Unlock Smarter Reading With Reader's Assisstant
           </h2>
           <p className="info text-[1.6em] w-[850px] mx-10 mt-5 font-[500]">
@@ -129,7 +129,7 @@ const page = () => {
             className="2xl:w-[500px] 2xl:absolute 2xl:top-28 2xl:left-6"
           />
           <div className="2xl:ml-[780px]">
-            <h2 className="text-[#3D3CC9] text-3xl font-[700] underline mt-32 ml-[-0px]">
+            <h2 className="text-[#3D3CC9] text-3xl font-[700] underline mt-32 ml-[-120px]">
               Get Answers at Your Fingertips
             </h2>
 

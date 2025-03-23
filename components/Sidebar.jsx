@@ -10,48 +10,84 @@ import {
 } from "react-icons/fa";
 import Button from "./Button";
 import gsap from "gsap";
+import Model from "./Model";
 
 const Sidebar = () => {
-  const [username, setUsername] = useState("Tijesunimi");
-  // useEffect(() => {
-  //   gsap.to(".btn", {
-  //     display: "none",
-  //     scrollTrigger: {
-  //       trigger: ".footer",
-  //       start: "top 20%",
-  //       end: "bottom 5%",
-  //       markers: true,
-  //     },
-  //   });
-  // });
+  const [username, setUsername] = useState("Samuel");
 
   const displayProfile = () => {
     const userProfile = document.querySelector(".userProfile");
     const textToSpeech = document.querySelector(".tts");
-    textToSpeech.style.display = "none";
+    const questionNans = document.querySelector(".questionNans");
+    const guidelines = document.querySelector(".guideline");
     userProfile.style.display = "flex";
-    console.log("working");
+    textToSpeech.style.display = "none";
+    questionNans.style.display = "none";
+    guidelines.style.display = "none";
   };
 
   const displayTTS = () => {
     const textToSpeech = document.querySelector(".tts");
     const userProfile = document.querySelector(".userProfile");
-    userProfile.style.display = "none";
+    const questionNans = document.querySelector(".questionNans");
+    const guidelines = document.querySelector(".guideline");
     textToSpeech.style.display = "flex";
-    console.log("working");
+    userProfile.style.display = "none";
+    questionNans.style.display = "none";
+    guidelines.style.display = "none";
   };
 
   const displayQA = () => {
-    console.log("Question and answer");
+    const userProfile = document.querySelector(".userProfile");
+    const textToSpeech = document.querySelector(".tts");
+    const questionNans = document.querySelector(".questionNans");
+    const guidelines = document.querySelector(".guideline");
+    questionNans.style.display = "flex";
+    textToSpeech.style.display = "none";
+    userProfile.style.display = "none";
+    guidelines.style.display = "none";
+    questionAi();
   };
 
   const Guidelines = () => {
-    console.log("Guidelines");
+    const userProfile = document.querySelector(".userProfile");
+    const textToSpeech = document.querySelector(".tts");
+    const questionNans = document.querySelector(".questionNans");
+    const guidelines = document.querySelector(".guideline");
+    guidelines.style.display = "flex";
+    questionNans.style.display = "none";
+    textToSpeech.style.display = "none";
+    userProfile.style.display = "none";
   };
 
+  const questionAi = () => {
+    const voiceModel = new SpeechSynthesisUtterance();
+
+    voiceModel.text =
+      "Please provide a comprehension passage or text you want to ask questions on as I can only answer questions based on the text you provide";
+
+    voiceModel.lang = "en-US";
+    voiceModel.voice = window.speechSynthesis.getVoices()[0];
+
+    window.speechSynthesis.speak(voiceModel);
+  };
+
+  useEffect(() => {
+    const voiceModel = new SpeechSynthesisUtterance();
+    voiceModel.text = `Hello ${username},Welcome to Reader's assistant, I'm Adam and I will be your Personal AI assistant.`;
+
+    voiceModel.lang = "en-US";
+    voiceModel.voice = window.speechSynthesis.getVoices()[0];
+
+    window.speechSynthesis.speak(voiceModel);
+  }, []);
+
   return (
-    <div className="bg-[#3D3CC9] w-[300px] mt-[-200px] pt-[300px] fixed bottom-0 top-0 z-10">
-      <div className="text-white mx-4 text-xl">Welcome, {username}</div>
+    <div className="bg-[#3D3CC9] w-[300px] mt-[-200px] pt-[300px] fixed bottom-0 top-0 z-10 ">
+      <div className="text-white mx-4 text-xl flex items-center justify-between">
+        Welcome, {username}
+        <Model  />
+      </div>
       <Button
         onClick={displayProfile}
         styles={
