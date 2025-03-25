@@ -225,8 +225,8 @@ const TextAudio = () => {
   };
 
   return (
-    <div className="w-full flex-col h-full ml-[300px] tts hidden">
-      <h1 className="text-center text-3xl font-bold text-[#3D3CC9]">
+    <div className="2xl:w-full 2xl:flex-col 2xl:h-full 2xl:ml-[300px] tts ">
+      <h1 className="text-center 2xl:text-3xl font-bold text-[#3D3CC9] text-[25px]">
         Text-to-Audio
       </h1>
       <div className="mx-5">
@@ -234,7 +234,7 @@ const TextAudio = () => {
           value={textContent}
           onChange={(e) => setTextContent(e.target.value)}
           name="text-to-audio-input"
-          className="w-[1150px] bg-[#f5f5f5] border-3 border-[#ccc] rounded-xl h-[300px] p-3 mt-5 placeholder:italic text"
+          className="2xl:w-[1150px] bg-[#f5f5f5] border-3 border-[#ccc] rounded-xl 2xl:h-[300px] p-3 mt-5 placeholder:italic text w-[330px] h-[200px]"
           placeholder="Type or paste text..."
         ></textarea>
 
@@ -244,9 +244,12 @@ const TextAudio = () => {
 
         <div>{speechError}</div>
 
-        <div className="controlPanels flex align-middle items-center">
+        <div className="controlPanels 2xl:flex 2xl:align-middle 2xl:items-center">
           <div className="mt-3">
-            <label htmlFor="rate" className="text-xl font-bold text-[#3D3CC9]">
+            <label
+              htmlFor="rate"
+              className="2xl:text-xl font-bold text-[#3D3CC9]"
+            >
               Speech Rate:{" "}
             </label>
             <input
@@ -262,9 +265,9 @@ const TextAudio = () => {
             <span className="ml-2">{speechRate}</span>
           </div>
 
-          <div className="flex items-center ml-5">
+          <div className="flex 2xl:items-center 2xl:ml-5 mt-3">
             <FaBackward
-              className="bg-[#3D3CC9] text-white mr-2 p-2 text-3xl rounded shadow"
+              className="bg-[#3D3CC9] text-white mr-2 p-2 text-3xl  rounded shadow"
               onClick={handleRewind}
             />
             <FaPlay
@@ -293,7 +296,7 @@ const TextAudio = () => {
 
       {/* image to text */}
       <div className="image-to-text mt-10">
-        <h1 className="text-center text-3xl font-bold text-[#3D3CC9]">
+        <h1 className="text-center 2xl:text-3xl font-bold text-[#3D3CC9] text-[25px]">
           Image-to-Audio
         </h1>
         <p className="mx-5">
@@ -301,7 +304,7 @@ const TextAudio = () => {
           I can't convert images and not accurate with image to text if image
           contains special characters.
         </p>
-        <div className="mx-5 mt-4 ">
+        <div className="mx-5 2xl:mt-4 mt-8">
           <input
             type="file"
             accept="image/*"
@@ -309,28 +312,26 @@ const TextAudio = () => {
             onChange={handleFileChange}
             className="hidden"
           />
-          <div className=" flex w-[400px]">
+          <div className="flex 2xl:w-[400px]">
             <label
               htmlFor="fileUpload"
-              className="border border-[#3D3CC9] rounded p-2 cursor-pointer text-[#3D3CC9] font-bold text-xl mt-4 w-[200px]"
+              className="border border-[#3D3CC9] rounded p-2 cursor-pointer text-[#3D3CC9] font-bold 2xl:text-xl 2xl:mt-4 w-[200px]"
             >
               {file ? file.name : "Upload Image"}
             </label>
             <Button
-              styles={"h-[40px] ml-5 mt-5 rounded-2xl text-white"}
+              styles={
+                "2xl:h-[40px] 2xl:ml-5 ml-2 2xl:mt-5 2xl:rounded-2xl text-white rounded"
+              }
               onClick={handleImageProcessing}
             >
               {loading ? "Processing..." : "Read Image"}
             </Button>
           </div>
-          <p className="text-red-500">{error}</p>
+          <p className="2xl:text-red-500">{error}</p>
           {text && (
             <div className="">
-              <Card
-                styles={"p-5 text-[1.2em] mt-4"}
-              >
-                {text}
-              </Card>
+              <Card styles={"p-5 text-[1.2em] mt-4"}>{text}</Card>
               <Button
                 styles={"mt-3 rounded-2xl text-white"}
                 onClick={handleSpeech}
@@ -347,7 +348,7 @@ const TextAudio = () => {
         <h1 className="text-center text-3xl font-bold text-[#3D3CC9]">
           PDF-to-Audio
         </h1>
-        <div className="mx-5 mt-4 ">
+        <div className="mx-5 2xl:mt-4 mt-8">
           <input
             type="file"
             accept="application/pdf"
@@ -355,25 +356,32 @@ const TextAudio = () => {
             onChange={handlePdfChange}
             className="hidden"
           />
-          <div className=" flex w-[400px]">
+          <div className="flex 2xl:w-[400px]">
             <label
               htmlFor="pdfUpload"
-              className="border border-[#3D3CC9] rounded p-2 cursor-pointer text-[#3D3CC9] font-bold text-xl mt-4 w-[200px]"
+              className="border border-[#3D3CC9] rounded p-2 cursor-pointer text-[#3D3CC9] font-bold 2xl:text-xl 2xl:mt-4 w-[200px]"
             >
               {pdfFile ? pdfFile.name : "Upload PDF"}
             </label>
             <Button
-              styles={"h-[40px] ml-5 mt-5 rounded-2xl text-white"}
+              styles={
+                "2xl:h-[40px] 2xl:ml-5 ml-2 2xl:mt-5 2xl:rounded-2xl text-white rounded"
+              }
               onClick={handlePDFProcessing}
             >
               {pdfLoading ? "Processing..." : "Read PDF"}
             </Button>
           </div>
-          <p className="text-red-500">{pdfError}</p>
+          <p className="2xl:text-red-500">{pdfError}</p>
           {pdfText && (
-            <div className="block">
-              <Card styles={"p-5 text-[1.2em] mt-4"}>{pdfText}</Card>
-              <Button styles={"mt-3 rounded-2xl text-white"} onClick={handleSpeech}>
+            <div className="2xl:block">
+              <Card styles={"2xl:p-5 2xl:text-[1.2em] 2xl:mt-4"}>
+                {pdfText}
+              </Card>
+              <Button
+                styles={"2xl:mt-3 2xl:rounded-2xl 2xl:text-white"}
+                onClick={handleSpeech}
+              >
                 Convert to audio
               </Button>
             </div>

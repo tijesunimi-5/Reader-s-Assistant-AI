@@ -11,7 +11,7 @@ const page = () => {
     <div className="pt-[90px] flex w-full">
       <Sidebar />
       <TextAudio />
-      <UserProfile />
+      {/* <UserProfile /> */}
       <QuestionA />
       <Guidelines />
       {/* <div className='w-full ml-[500px] h-[100vh]'></div> */}
