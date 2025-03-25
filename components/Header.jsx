@@ -3,7 +3,7 @@ import React from "react";
 import Button from "./Button";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaMinus } from "react-icons/fa";
 
 const Header = () => {
   const router = useRouter();
@@ -39,15 +39,25 @@ const Header = () => {
 
   const toggleMobileBar = () => {
     const mobileBar = document.querySelector(".mobilebar");
+    const bar = document.querySelector(".bar");
+    const minus = document.querySelector(".minus");
+    //this displays the mobilesidebar
     if (!mobileBar.classList.contains("active")) {
       mobileBar.style.marginLeft = "0px";
       mobileBar.classList.add("active");
+      bar.classList.add("hidden");
+      minus.classList.remove("hidden");
       return;
     }
 
+    //this hides the mobilesidebar
     if (mobileBar.classList.contains("active")) {
+      const bar = document.querySelector(".bar");
+      const minus = document.querySelector(".minus");
       mobileBar.style.marginLeft = "-300px";
       mobileBar.classList.remove("active");
+      minus.classList.add("hidden");
+      bar.classList.remove("hidden");
       return;
     }
   };
@@ -96,7 +106,16 @@ const Header = () => {
       >
         Get started
       </Button>
-      <FaBars className="2xl:hidden bar text-[26px]" onClick={toggleMobileBar} />
+      <div className="flex justify-center items-center">
+        <FaBars
+          className="2xl:hidden bar text-[26px]"
+          onClick={toggleMobileBar}
+        />
+        <FaMinus
+          className="2xl:hidden minus hidden text-[26px]"
+          onClick={toggleMobileBar}
+        />
+      </div>
     </header>
   );
 };
