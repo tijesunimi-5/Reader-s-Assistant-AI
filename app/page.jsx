@@ -131,7 +131,7 @@ const page = () => {
             src="/images/research_paper.png"
             className="bottom-[-30px] w-[450px] 2xl:w-[500px] absolute 2xl:top-28 2xl:left-6 info-img2"
           />
-          <div className="2xl:ml-[780px]">
+          <div className="2xl:ml-[780px] mt-20">
             <h2 className="text-[#3D3CC9] 2xl:text-3xl font-[700] text-[23px] ml-2 underline 2xl:mt-32 2xl:ml-[-120px] info-head2">
               Get Answers at Your Fingertips
             </h2>
