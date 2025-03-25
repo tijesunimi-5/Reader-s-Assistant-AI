@@ -3,7 +3,7 @@ import React from "react";
 import Button from "./Button";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { FaBars, FaMinus } from "react-icons/fa";
+import { FaBars, FaMinus, FaTimes } from "react-icons/fa";
 
 const Header = () => {
   const router = useRouter();
@@ -111,7 +111,7 @@ const Header = () => {
           className="2xl:hidden bar text-[26px]"
           onClick={toggleMobileBar}
         />
-        <FaMinus
+        <FaTimes
           className="2xl:hidden minus hidden text-[26px]"
           onClick={toggleMobileBar}
         />
