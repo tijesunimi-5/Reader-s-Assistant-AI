@@ -37,7 +37,8 @@ const QuestionA = () => {
 
       console.log("QnA model loaded successfully!");
       if (model) {
-        setLoading(false); return
+        setLoading(false);
+        return;
       }
     };
     loadModel();
@@ -77,11 +78,11 @@ const QuestionA = () => {
   };
 
   return (
-    <div className=" w-[1190px] ml-[320px] flex-col p-5 rounded bg-[#f5f5f5]  h-full mb-20 hidden questionNans">
-      <h1 className="text-3xl font-bold text-center text-[#3d3cc9] w-full">
+    <div className=" 2xl:w-[1190px] 2xl:ml-[320px] flex-col p-5 rounded bg-[#f5f5f5]  2xl:h-full pb-20 flex 2xl:hidden questionNans">
+      <h1 className="2xl:text-3xl text-2xl font-bold text-center text-[#3d3cc9] w-full mt-14">
         Question and Answer
       </h1>
-      <p className="p-3 text-[21px] tracking-wide">
+      <p className="2xl:p-3 2xl:text-[21px] 2xl:tracking-wide py-3">
         Paste a passage you want to recieve answers on or select a file and
         recieve answer on it, has AI can only answer based on the text you
         provide.
@@ -95,7 +96,7 @@ const QuestionA = () => {
             rows={10}
             value={context}
             onChange={(e) => setContext(e.target.value)}
-            className=" px-2 py-1 placeholder:text-2xl border border-white outline-0 placeholder:italic"
+            className="px-2 py-1 placeholder:text-xl 2xl:placeholder:text-2xl border border-white outline-0 placeholder:italic"
           />
         </Card>
 
@@ -104,13 +105,14 @@ const QuestionA = () => {
         ) : (
           <div>Model loaded successfully</div>
         )}
-        <div className="quest w-full bg-white mt-3">
+        <div className="quest 2xl:w-full 2xl:bg-white 2xl:mt-3">
           <input
             type="text"
             placeholder="Ask question"
             value={question}
             onChange={(e) => setQuestion(e.target.value)}
-            className="h-12 outline-0 border-0 p-2 w-full shadow"
+            className="h-12 outline-0 border-0 2xl:p-2 
+             mt-2 px-2 w-full shadow bg-white"
           />
         </div>
         <Button

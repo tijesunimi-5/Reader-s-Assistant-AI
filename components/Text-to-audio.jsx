@@ -63,15 +63,8 @@ const TextAudio = () => {
     );
     newSpeech.rate = speechRate;
 
-    // Track the current index while speaking
-    newSpeech.onboundary = (event) => {
-      setSpeechIndex(speechIndex + event.charIndex);
-    };
-    // newSpeech.onstart = startRecording;
-    // newSpeech.onend = stopRecording;
     setSpeech(newSpeech);
-    // window.speechSynthesis.speak(newSpeech);
-    captureAndDownloadSpeech(textContent);
+    window.speechSynthesis.speak(newSpeech);
   };
 
   const handlePause = () => {
@@ -84,70 +77,6 @@ const TextAudio = () => {
     window.speechSynthesis.cancel();
     setSpeechIndex(0);
   };
-  const handleRewind = () => {
-    const newIndex = Math.max(textContent.length, speechIndex - 50);
-    setSpeechIndex(newIndex);
-    restartSpeech(newIndex);
-  };
-
-  const handleForward = () => {
-    const newIndex = Math.min(textContent.length, speechIndex + 20);
-    setSpeechIndex(newIndex);
-    restartSpeech(newIndex);
-  };
-
-  // Helper function to restart speech at a new index
-  const restartSpeech = (index) => {
-    window.speechSynthesis.cancel(); // Stop current speech
-    setTimeout(() => handleSpeech(index), 100); // Restart with delay
-  };
-
-  async function captureAndDownloadSpeech(text) {
-    const synth = window.speechSynthesis;
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.rate = speechRate;
-
-    const audioContext = new AudioContext();
-    const dest = audioContext.createMediaStreamDestination();
-    const mediaRecorder = new MediaRecorder(dest.stream);
-
-    let audioChunks = [];
-
-    mediaRecorder.ondataavailable = (event) => {
-      audioChunks.push(event.data);
-    };
-
-    mediaRecorder.onstop = () => {
-      const audioBlob = new Blob(audioChunks, { type: "audio/wav" });
-      const audioUrl = URL.createObjectURL(audioBlob);
-
-      // Create a download link
-      const downloadLink = document.createElement("a");
-      downloadLink.href = audioUrl;
-      downloadLink.download = "speech.wav";
-      document.body.appendChild(downloadLink);
-      downloadLink.click();
-      document.body.removeChild(downloadLink);
-    };
-
-    // Connect speech synthesis to the recording
-    const source = audioContext.createMediaStreamSource(dest.stream);
-    source.connect(audioContext.destination);
-
-    utterance.onstart = () => {
-      mediaRecorder.start();
-    };
-
-    utterance.onend = () => {
-      mediaRecorder.stop();
-      audioContext.close();
-    };
-
-    synth.speak(utterance);
-  }
-
-
-  
 
   const handleImageProcessing = () => {
     if (!file) {
@@ -170,7 +99,7 @@ const TextAudio = () => {
           const cleanedText = cleanText(text);
           setText(cleanedText);
 
-          setTextContent(text)
+          setTextContent(text);
         })
         .catch((err) => {
           console.error("OCR Error:", err);
@@ -213,7 +142,7 @@ const TextAudio = () => {
 
         setTimeout(() => {
           setTextContent(pdfText);
-        }, 1900)
+        }, 1900);
       } catch (error) {
         console.error("PDF Extraction Error:", error);
       } finally {
@@ -225,7 +154,7 @@ const TextAudio = () => {
   };
 
   return (
-    <div className="2xl:w-full 2xl:flex-col 2xl:h-full 2xl:ml-[300px] tts ">
+    <div className="2xl:w-full flex-col 2xl:h-full 2xl:ml-[300px] tts ">
       <h1 className="text-center 2xl:text-3xl font-bold text-[#3D3CC9] text-[25px]">
         Text-to-Audio
       </h1>
@@ -266,10 +195,10 @@ const TextAudio = () => {
           </div>
 
           <div className="flex 2xl:items-center 2xl:ml-5 mt-3">
-            <FaBackward
+            {/* <FaBackward
               className="bg-[#3D3CC9] text-white mr-2 p-2 text-3xl  rounded shadow"
               onClick={handleRewind}
-            />
+            /> */}
             <FaPlay
               onClick={handleResume}
               className="bg-[#3D3CC9] text-white mr-2 p-2 text-3xl rounded shadow"
@@ -282,10 +211,10 @@ const TextAudio = () => {
               className="bg-[#3D3CC9] text-white mr-2 p-2 text-3xl rounded shadow"
               onClick={handleStop}
             />
-            <FaForward
+            {/* <FaForward
               className="bg-[#3D3CC9] text-white mr-2 p-2 text-3xl rounded shadow"
               onClick={handleForward}
-            />
+            /> */}
             {/* <FaDownload
               className="bg-[#3D3CC9] text-white mr-2 p-2 text-3xl rounded shadow"
               onClick={captureAndDownloadSpeech(textContent)}

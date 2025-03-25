@@ -32,7 +32,7 @@ const Sidebar = () => {
     const questionNans = document.querySelector(".questionNans");
     const guidelines = document.querySelector(".guideline");
     textToSpeech.style.display = "flex";
-    userProfile.style.display = "none";
+    // userProfile.style.display = "none";
     questionNans.style.display = "none";
     guidelines.style.display = "none";
   };
@@ -44,7 +44,7 @@ const Sidebar = () => {
     const guidelines = document.querySelector(".guideline");
     questionNans.style.display = "flex";
     textToSpeech.style.display = "none";
-    userProfile.style.display = "none";
+    // userProfile.style.display = "none";
     guidelines.style.display = "none";
     questionAi();
   };
@@ -57,7 +57,7 @@ const Sidebar = () => {
     guidelines.style.display = "flex";
     questionNans.style.display = "none";
     textToSpeech.style.display = "none";
-    userProfile.style.display = "none";
+    // userProfile.style.display = "none";
   };
 
   const questionAi = () => {
@@ -83,12 +83,12 @@ const Sidebar = () => {
   }, []);
 
   return (
-    <div className="2xl:bg-[#3D3CC9] 2xl:w-[300px] 2xl:mt-[-200px] 2xl:pt-[300px] 2xl:fixed 2xl:bottom-0 2xl:top-0 2xl:z-10 hidden">
+    <div className="2xl:bg-[#3D3CC9] 2xl:w-[300px] 2xl:mt-[-200px] 2xl:pt-[300px] 2xl:fixed 2xl:bottom-0 2xl:top-0 2xl:z-10 hidden 2xl:block">
       <div className="2xl:text-white 2xl:mx-4 2xl:text-xl 2xl:flex 2xl:items-center 2xl:justify-between">
         Welcome, 
         <Model  />
       </div>
-      <Button
+      {/* <Button
         onClick={displayProfile}
         styles={
           "2xl:mx-3 2xl:bg-white 2xl:p-2 2xl:rounded 2xl:w-[280px] 2xl:text-[1.2em] 2xl:font-bold 2xl:tracking-wide 2xl:text-[#3D3CC9] 2xl:shadow-xl 2xl:flex 2xl:align-middle 2xl:mt-5"
@@ -96,7 +96,7 @@ const Sidebar = () => {
       >
         <FaUser className="mr-2 mt-1 text-[1.12em]" />
         <span className="pt-1 scale-y-110">Profile</span>
-      </Button>
+      </Button> */}
 
       <Button
         onClick={displayTTS}

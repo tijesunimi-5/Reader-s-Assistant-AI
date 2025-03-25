@@ -4,8 +4,8 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#3D3CC9] 2xl:flex border-t border-white text-white 2xl:bottom-0 2xl:h-48 pt-7 z-50 footer">
-      <div className="z-40 relative">
+    <footer className="bg-[#3D3CC9] 2xl:flex border-t border-white text-white 2xl:bottom-0 2xl:h-48 pt-7 z-20 footer">
+      <div className="z-20 relative">
         <h1 className=" font-[800] scale-y-150 tracking-wide 2xl:text-xl mx-5 footerh">
           Reader's Assisstant AI
         </h1>

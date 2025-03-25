@@ -5,24 +5,24 @@ import Link from "next/link";
 
 const Guidelines = () => {
   return (
-    <div className="bg-[#f5f5f5] rounded ml-[320px] flex-col w-[1190px] mb-20 guideline text-black hidden">
+    <div className="bg-[#f5f5f5] rounded 2xl:ml-[320px] flex-col 2xl:w-[1190px] mb-20 guideline text-black 2xl:hidden flex">
       <div className="w-full">
-        <h1 className="text-3xl font-bold text-center text-[#3d3cc9]">
+        <h1 className="2xl:text-3xl font-bold text-center text-[#3d3cc9] text-[25px]">
           Guidelines
         </h1>
-        <p className="p-3 text-[22px] tracking-wide">
+        <p className="p-3 2xl:text-[22px] tracking-wide text-[18px]">
           Reader's assisstant AI, is an AI model that assissts reader in
           covering large and bulky material if you enjoy listening, This is a
           meant just for you.{" "}
         </p>
       </div>
 
-      <div className="text-to-audio-guide mx-10">
+      <div className="text-to-audio-guide 2xl:mx-10 mx-5">
         <Card styles={"mt-3 p-2"}>
-          <h1 className="text-[2em] text-center font-bold">
+          <h1 className="text-[2em] 2xl:text-center font-bold">
             Text-to-Speech Guideline
           </h1>
-          <p className="mt-3 ml-10 text-[1.18em]">
+          <p className="mt-3 2xl:ml-10 text-[1.18em]">
             In this section, you can copy and paste texts that you'd love to
             listening to. <br /> Copy text and paste in the input field for{" "}
             <Link href={"/"} className="underline">
@@ -34,7 +34,7 @@ const Guidelines = () => {
           </p>
 
           <h2 className="ml-3 mt-4 font-bold text-xl">Demo:</h2>
-          <div className="demo-video ml-24 mt-7">
+          <div className="demo-video 2xl:ml-24 mt-7">
             <video
               src="/video/RAAI_DEMO.mp4"
               
@@ -43,9 +43,9 @@ const Guidelines = () => {
             ></video>
           </div>
 
-          <div className="extras mt-9 mx-10">
+          <div className="extras mt-9 2xl:mx-10 mx-2">
             <h2 className="text-2xl font-bold ">Additionals</h2>
-            <ul className="list-disc text-xl w-[700px] ml-4">
+            <ul className="list-disc text-xl 2xl:w-[700px] ml-4">
               <li>You can Pause and Play on your audio.</li>
               <li>You can Rewind and Forward.</li>
               <li>
@@ -61,12 +61,12 @@ const Guidelines = () => {
         </Card>
       </div>
 
-      <div className="pdf-to-audio-guide mx-10 my-10">
+      <div className="pdf-to-audio-guide 2xl:mx-10 my-10 mx-5">
         <Card styles={"p-2"}>
-          <h1 className="text-[2em] text-center font-bold">
+          <h1 className="text-[2em] 2xl:text-center font-bold">
             PDF-to-Speech Guideline
           </h1>
-          <p className="mt-3 ml-10 text-[1.18em]">
+          <p className="mt-3 2xl:ml-10 text-[1.18em]">
             In this section, you can select a PDF file from your file and
             convert them to text then convert to audio. select pdf file:
             <Link href={"/"} className="underline">
@@ -80,7 +80,7 @@ const Guidelines = () => {
           <div className="demo-video">
             <h2 className="ml-3 mt-4 font-bold text-xl">Demo:</h2>
 
-            <video src="/video/RAAI_DEMO.mp4" className="ml-24 mt-7"></video>
+            <video src="/video/RAAI_DEMO.mp4" className="2xl:ml-24 mt-7"></video>
           </div>
         </Card>
       </div>

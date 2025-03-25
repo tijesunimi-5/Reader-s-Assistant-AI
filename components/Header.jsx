@@ -39,6 +39,7 @@ const Header = () => {
 
   const toggleMobileBar = () => {
     const mobileBar = document.querySelector(".mobilebar");
+    console.log(mobileBar)
     const bar = document.querySelector(".bar");
     const minus = document.querySelector(".minus");
     //this displays the mobilesidebar
@@ -65,7 +66,7 @@ const Header = () => {
   return (
     <header className="flex justify-between mt-5 mx-2 px-5 py-2 fixed right-0 left-0 bg-[#3D3CC9] items-center rounded text-white shadow z-50 header">
       <h1 className="logo font-[800] scale-y-150 tracking-wide text-xl">
-        Reader's Assisstant AI
+        <Link href={"/"}>Reader's Assisstant AI</Link>
       </h1>
 
       <div className="blur w-full ml-[-20px] h-10 top-[-39px] absolute bg-transparent"></div>
