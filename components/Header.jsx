@@ -96,7 +96,7 @@ const Header = () => {
       >
         Get started
       </Button>
-      <FaBars className="2xl:hidden bar " onClick={toggleMobileBar} />
+      <FaBars className="2xl:hidden bar text-[26px]" onClick={toggleMobileBar} />
     </header>
   );
 };

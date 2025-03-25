@@ -132,6 +132,12 @@ ul li:hover span {
   background: white;
   border: 1px solid #3d3cc9;
 }
+.card {
+  border-radius: 30px;
+background: linear-gradient(145deg, #3736b5, #4140d7);
+box-shadow:  20px 20px 60px #3433ab,
+             -20px -20px 60px #4645e7;
+}
 
 /*Responsiveness*/
 /* @media (max-width: 376px) {
