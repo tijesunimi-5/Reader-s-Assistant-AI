@@ -134,7 +134,7 @@ ul li:hover span {
 }
 
 /*Responsiveness*/
-@media (max-width: 376px) {
+/* @media (max-width: 376px) {
   body {
     width: 375px;
   }
@@ -318,4 +318,4 @@ ul li:hover span {
     display: flex;
     margin-right: 20px;
   }
-}
+} */

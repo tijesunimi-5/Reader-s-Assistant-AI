@@ -1,6 +1,7 @@
 "use client";
 import Button from "@/components/Button";
 import Card from "@/components/Card";
+import { set } from "mongoose";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
@@ -14,10 +15,41 @@ const page = () => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [eye, setEye] = useState("text-white");
+  const [user, setUser] = useState(null);
+  const [error, setError] = useState("");
 
-  const handleLogin = () => {
+  const handleLogin = async (e) => {
+    // e.preventDefault();
     const userEmail = email;
     const userPassword = password;
+
+    try {
+      const res = await fetch("/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: userEmail, password: userPassword }),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        localStorage.setItem("token", data.token);
+        setUser(data.user);
+        setError("Login successful");
+        setTimeout(() => {
+          setError("");
+        }, 3000);
+        router.push("/Reader-assisstant.ai");
+      } else {
+        setError(data.message);
+        setTimeout(() => {
+          setError("");
+        }, 3000);
+      }
+    } catch (error) {
+      setError("An error occurred");
+      setTimeout(() => {setError("")}, 3000);
+    }
   };
 
   return (
@@ -85,12 +117,13 @@ const page = () => {
           <Button
             styles={"w-[100px] bg-[#3D3CC9]"}
             onClick={() => {
-              router.push("/Reader-assisstant.ai");
-              setEye("text-white");
+              // router.push("/Reader-assisstant.ai");
+              setEye("text-white"); handleLogin();
             }}
           >
             Login
           </Button>
+          {error}
         </div>
 
         <div className="mt-6">
