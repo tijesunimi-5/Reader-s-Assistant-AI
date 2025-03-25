@@ -10,9 +10,15 @@ const page = () => {
   //function to toggle blur if forgot password is clicked - reason is to keep the page, not redirecting to a new page
   const [blur, setBlur] = useState("");
   const router = useRouter();
-
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [eye, setEye] = useState("text-white");
+
+  const handleLogin = () => {
+    const userEmail = email;
+    const userPassword = password;
+  };
 
   return (
     <div className="h-[90vh] bg-[#F5F5F5] flex flex-col pt-[100px]">
@@ -37,7 +43,10 @@ const page = () => {
           <input
             required="required"
             type="email"
-            onClick={() => setEye("text-white")}
+            onClick={() => {
+              setEye("text-white");
+            }}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <span>Email</span>
           <i></i>
@@ -48,6 +57,7 @@ const page = () => {
             required="required"
             type={showPassword ? "text" : "password"}
             onClick={() => setEye("text-[#3D3CC9]")}
+            onChange={(e) => setPassword(e.target.value)}
           />
           <span>Password</span>
           <i></i>

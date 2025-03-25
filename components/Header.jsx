@@ -37,13 +37,28 @@ const Header = () => {
     profilelink.classList.add("underlineb");
   };
 
+  const toggleMobileBar = () => {
+    const mobileBar = document.querySelector(".mobilebar");
+    if (!mobileBar.classList.contains("active")) {
+      mobileBar.style.marginLeft = "0px";
+      mobileBar.classList.add("active");
+      return;
+    }
+
+    if (mobileBar.classList.contains("active")) {
+      mobileBar.style.marginLeft = "-300px";
+      mobileBar.classList.remove("active");
+      return;
+    }
+  };
+
   return (
     <header className="flex justify-between mt-5 mx-2 px-5 py-2 fixed right-0 left-0 bg-[#3D3CC9] items-center rounded text-white shadow z-50 header">
       <h1 className="logo font-[800] scale-y-150 tracking-wide text-xl">
         Reader's Assisstant AI
       </h1>
 
-      <div className="blur 2xl:w-full 2xl:ml-[-20px] 2xl:h-10 2xl:top-[-39px] 2xl:absolute 2xl:bg-transparent"></div>
+      <div className="blur w-full ml-[-20px] h-10 top-[-39px] absolute bg-transparent"></div>
 
       <ul className="2xl:flex 2xl:justify-between 2xl:items-center 2xl:flex-row 2xl:w-[300px] nav hidden">
         <Link href={"/"}>
@@ -81,7 +96,7 @@ const Header = () => {
       >
         Get started
       </Button>
-      <FaBars className="2xl:hidden bar " />
+      <FaBars className="2xl:hidden bar " onClick={toggleMobileBar} />
     </header>
   );
 };

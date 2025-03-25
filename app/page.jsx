@@ -25,8 +25,6 @@ const page = () => {
       router.push("/main-page");
     }
   }, [signedIn, router]);
-  const screenWidth = window.innerWidth;
-  console.log(screenWidth)
 
   useEffect(() => {
     gsap.to(".cover", {
@@ -52,8 +50,10 @@ const page = () => {
     });
   }, []);
 
+  const screenWidth = window.innerWidth;
   if (screenWidth >= 375) {
     useEffect(() => {
+      
       gsap.to(".small-txt", {
         opacity: 1,
         marginTop: "18px",
@@ -130,21 +130,21 @@ const page = () => {
           />
         </div>
 
-        <div className="2xl:relative 2xl:h-[80vh] 2xl:mt-18 info-div2">
+        <div className="relative h-[80vh] 2xl:mt-18 info-div2">
           <img
             src="/images/research_paper.png"
-            className="2xl:w-[500px] 2xl:absolute 2xl:top-28 2xl:left-6"
+            className="2xl:w-[500px] 2xl:absolute 2xl:top-28 2xl:left-6 info-img2"
           />
           <div className="2xl:ml-[780px]">
-            <h2 className="2xl:text-[#3D3CC9] 2xl:text-3xl 2xl:font-[700] 2xl:underline 2xl:mt-32 2xl:ml-[-120px]">
+            <h2 className="2xl:text-[#3D3CC9] 2xl:text-3xl 2xl:font-[700] 2xl:underline 2xl:mt-32 2xl:ml-[-120px] info-head2">
               Get Answers at Your Fingertips
             </h2>
 
-            <p className="info2 2xl:text-[1.6em] 2xl:w-[850px] 2xl:mt-5 2xl:font-[500] 2xl:ml-[-120px]">
+            <p className="info2 2xl:text-[1.6em] 2xl:w-[850px] 2xl:mt-5 2xl:font-[500] 2xl:ml-[-120px] info-txt2">
               Reader's Assistant also helps you grasp difficult concepts by
               providing:
             </p>
-            <ul className="2xl:ml-[-100px] 2xl:text-[1.57em] 2xl:list-disc ">
+            <ul className="2xl:ml-[-100px] 2xl:text-[1.57em] 2xl:list-disc info-ul2">
               <li>
                 <b>Instant answers</b> to questions based on your provided text
                 or material
@@ -154,19 +154,19 @@ const page = () => {
               </li>
             </ul>
 
-            <p className="2xl:text-[1.5em] 2xl:mt-20">
+            <p className="2xl:text-[1.5em] 2xl:mt-20 info-dir">
               See more info in our{" "}
-              <Link href={"/"} className="2xl:underline 2xl:font-semibold">
+              <Link href={"/"} className="2xl:underline 2xl:font-semibold span">
                 Guidelines
               </Link>
             </p>
           </div>
         </div>
 
-        <div className="start 2xl:mt-10 2xl:text-[#3D3CC9] 2xl:text-3xl 2xl:font-[700] 2xl:underline 2xl:mb-40">
-          <h1 className="2xl:text-center">Get Started</h1>
+        <div className="start 2xl:mt-10 2xl:text-[#3D3CC9] 2xl:text-3xl 2xl:font-[700] 2xl:underline 2xl:mb-40 start-div">
+          <h1 className="2xl:text-center start-h">Get Started</h1>
 
-          <div className="2xl:flex">
+          <div className="2xl:flex cardDiv">
             <Card
               styles={
                 "2xl:w-[300px] 2xl:h-[445px] 2xl:ml-[400px] 2xl:flex 2xl:flex-col 2xl:mt-10 2xl:cursor-pointer cardBlur"

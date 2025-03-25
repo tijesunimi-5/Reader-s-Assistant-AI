@@ -128,11 +128,10 @@ ul li:hover span {
 }
 
 .btn:hover {
-  color: #3D3CC9;
+  color: #3d3cc9;
   background: white;
-  border: 1px solid #3D3CC9;
+  border: 1px solid #3d3cc9;
 }
-
 
 /*Responsiveness*/
 @media (max-width: 376px) {
@@ -164,12 +163,14 @@ ul li:hover span {
     width: 375px;
     height: 100vh;
     overflow: hidden;
-    background: #3D3CC9;
+    background: #3d3cc9;
     position: relative;
   }
   .hero-img {
     position: absolute;
     bottom: 80px;
+    width: 350px;
+    margin-left: 12px;
   }
   .hero-txt {
     padding-top: 100px;
@@ -204,7 +205,7 @@ ul li:hover span {
   }
   .info-head {
     text-align: start;
-    color: #3D3CC9;
+    color: #3d3cc9;
     font-weight: bold;
     font-size: 24px;
     padding-top: 80px;
@@ -230,7 +231,91 @@ ul li:hover span {
     margin-top: -40px;
   }
   .info-div2 {
+    position: relative;
+    width: 370px;
+    padding-left: 10px;
+  }
+  .info-img2 {
+    position: absolute;
+    bottom: -50px;
+    width: 350px;
+    left: 10px;
+  }
+  .info-head2 {
+    text-align: start;
+    color: #3d3cc9;
+    font-weight: bold;
+    font-size: 24px;
+    width: 360px;
+    text-decoration: underline;
+  }
+  .info-txt2 {
+    font-size: 19px;
+  }
+  .info-ul2 {
+    list-style-type: disc;
+    font-size: 18px;
+    width: 350px;
+    padding-left: 18px;
+  }
+  .info-dir{
+    font-size: 19px;
+    margin-top: 10px;
+  }
+  .info-dir .span {
+    color: #3d3cc9;
+    text-decoration: underline;
+  }
+  .start-div {
+    margin-top: 80px;
+    color: #3d3cc9;
+    font-size: 25px;
+    text-decoration: underline;
     
   }
+  .start-h {
+    text-align: center;
+    font-weight: 600;
+    font-size: 27px;
+    margin-bottom: 14px;
+  }
+  .cardBlur {
+    width: 330px;
+    margin-left: 25px;
+    margin-bottom: 40px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+  }
+  .cardDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .footer {
+    background: #3d3cc9;
+    color: white;
+  }
+  .footerh {
+    font-size: 18px;
+  }
+  .footerl, .footerl2 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+  }
+  .footerl2 {
+    position: absolute;
+    bottom: 95px;
+    right: 20px;
+  }
+  .footerform {
+    display: flex;
+    padding-bottom: 10px;
+    margin-left: 20px;
+    margin-top: 25px;
+  }
+  .f1 {
+    display: flex;
+    margin-right: 20px;
+  }
 }
- 

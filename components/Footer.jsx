@@ -4,17 +4,17 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="2xl:bg-[#3D3CC9] 2xl:flex 2xl:border-t 2xl:border-white 2xl:text-white 2xl:bottom-0 2xl:h-48 2xl:pt-7 2xl:z-50 footer">
-      <div className="2xl:z-40">
-        <h1 className=" 2xl:font-[800] 2xl:scale-y-150 2xl:tracking-wide 2xl:text-xl 2xl:mx-5">
+    <footer className="2xl:bg-[#3D3CC9] 2xl:flex border-t border-white 2xl:text-white 2xl:bottom-0 2xl:h-48 pt-7 z-50 footer">
+      <div className="z-40">
+        <h1 className=" font-[800] scale-y-150 tracking-wide 2xl:text-xl mx-5 footerh">
           Reader's Assisstant AI
         </h1>
-        <p className="2xl:mx-5 2xl:text-[1.2em] 2xl:w-[550px] 2xl:mt-4">
+        <p className="mx-5 2xl:text-[1.2em] 2xl:w-[550px] mt-4">
           Transform your text into sound. Stay ahead with AI that reads, so you
           can focus on what matters.
         </p>
       </div>
-      <div className="2xl:flex 2xl:flex-col 2xl:justify-between 2xl:h-[120px] 2xl:text-[1.2em] 2xl:mt-7">
+      <div className="2xl:flex 2xl:flex-col 2xl:justify-between 2xl:h-[120px] 2xl:text-[1.2em] mt-7 footerl relative">
         <Link href={"/"} className="2xl:underline">
           Guidelines
         </Link>
@@ -25,10 +25,10 @@ const Footer = () => {
           Text-to-Audio
         </Link>
       </div>
-      <div className="2xl:flex 2xl:flex-col 2xl:justify-between 2xl:h-[120px] 2xl:text-[1.2em] 2xl:mt-7 2xl:ml-28">
-        <Link href={"/"} className="2xl:underline">
+      <div className="2xl:flex 2xl:flex-col 2xl:justify-between 2xl:h-[120px] 2xl:text-[1.2em] 2xl:mt-7 2xl:ml-28 footerl2">
+        {/* <Link href={"/"} className="2xl:underline">
           Account Settings
-        </Link>
+        </Link> */}
         <Link href={"/"} className="2xl:underline">
           Feedback
         </Link>
@@ -36,8 +36,8 @@ const Footer = () => {
           Developer Profile
         </Link>
       </div>
-      <form className="2xl:mt-7 2xl:ml-28">
-        <div className="2xl:flex">
+      <form className="2xl:mt-7 2xl:ml-28 footerform">
+        <div className="2xl:flex f1">
           <input type="checkbox" className="2xl:border 2xl:border-white 2xl:rounded 2xl:w-4" />
           <p className="2xl:ml-2 2xl:text-[1.1em]">Was this helpful to you?</p>
         </div>
