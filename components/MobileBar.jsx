@@ -11,7 +11,7 @@ const MobileBar = () => {
         <p className="ml-5 mb-3">Welcome to Reader's assistant.</p>
         <Button
           styles={
-            "bg-white border-[#3D3CC9] text-[#3D3CC9] font-bold ml-5 w-[250px] rounded text-[1.25em]"
+            "bg-white border-[#3D3CC9] text-[#3D3CC9] font-bold ml-5 w-[250px] rounded text-[1.25em] text-start"
           }
           onClick={() => {
             router.push("/Reader-assisstant.ai");
@@ -33,7 +33,7 @@ const MobileBar = () => {
 
         <Button
           styles={
-            "bg-white border-[#3D3CC9] text-[#3D3CC9] font-bold ml-5 w-[250px] rounded text-[1.25em] mt-5"
+            "bg-white border-[#3D3CC9] text-[#3D3CC9] font-bold ml-5 w-[250px] rounded text-[1.25em] mt-5 text-start"
           }
           onClick={() => {
             router.push("/Reader-assisstant.ai");

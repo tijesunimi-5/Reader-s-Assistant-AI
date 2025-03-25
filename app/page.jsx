@@ -120,7 +120,7 @@ const page = () => {
           </ul>
 
           <img
-            src="/images/learning_step.png"
+            src="/images/Learning_step.png"
             alt="learning image"
             className="mt-[-50px] 2xl:w-[500px] 2xl:absolute 2xl:right-20 2xl:top-32 info-img1"
           />
