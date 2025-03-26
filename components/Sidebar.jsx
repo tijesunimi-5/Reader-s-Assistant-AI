@@ -85,7 +85,7 @@ const Sidebar = () => {
   return (
     <div className="2xl:bg-[#3D3CC9] 2xl:w-[300px] 2xl:mt-[-200px] 2xl:pt-[300px] 2xl:fixed 2xl:bottom-0 2xl:top-0 2xl:z-10 hidden 2xl:block">
       <div className="2xl:text-white 2xl:mx-4 2xl:text-xl 2xl:flex 2xl:items-center 2xl:justify-between">
-        Welcome, 
+        Welcome
         <Model  />
       </div>
       {/* <Button

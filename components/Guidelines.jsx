@@ -12,7 +12,7 @@ const Guidelines = () => {
         </h1>
         <p className="p-3 2xl:text-[22px] tracking-wide text-[18px]">
           Reader's assisstant AI, is an AI model that assissts reader in
-          covering large and bulky material if you enjoy listening, This is a
+          covering large and bulky material if you enjoy listening, This is
           meant just for you.{" "}
         </p>
       </div>
@@ -24,7 +24,7 @@ const Guidelines = () => {
           </h1>
           <p className="mt-3 2xl:ml-10 text-[1.18em]">
             In this section, you can copy and paste texts that you'd love to
-            listening to. <br /> Copy text and paste in the input field for{" "}
+            listen to. <br /> Copy text and paste in the input field for{" "}
             <Link href={"/"} className="underline">
               Text-to-Speech
             </Link>

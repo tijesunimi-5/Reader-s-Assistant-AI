@@ -81,7 +81,7 @@ const Header = () => {
             ></span>
           </li>
         </Link>
-        <Link href={"/"}>
+        <Link href={"/Reader-assisstant.ai"}>
           <li className="2xl:text-[1.2em] 2xl:font-[600] 2xl:cursor-pointer 2xl:relative ">
             Text to Speech{" "}
             <span
@@ -107,7 +107,7 @@ const Header = () => {
       >
         Get started
       </Button>
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center 2xl:hidden">
         <FaBars
           className="2xl:hidden bar text-[26px]"
           onClick={toggleMobileBar}

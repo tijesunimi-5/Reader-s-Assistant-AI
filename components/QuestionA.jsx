@@ -12,41 +12,28 @@ const QuestionA = () => {
   const [answers, setAnswers] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-
-  // useEffect(() => {
-  //   const loadModel = async () => {
-  //     console.log("Loading QnA model...");
-  //     const qnaModel = await qna.load();
-  //     setModel(qnaModel);
-  //     console.log("QnA model loaded successfully!");
-  //   };
-  //   loadModel();
-  // }, []);
+  const [worker, setWorker] = useState(null);
 
   useEffect(() => {
-    const loadModel = async () => {
-      console.log("Loading QnA model...");
-      setLoading(true);
+    const qnaWorker = new Worker("/qnaWorker.js");
+    setWorker(qnaWorker);
 
-      // Set backend to CPU
-      await tf.setBackend("cpu");
-      await tf.ready();
-
-      const qnaModel = await qna.load();
-      setModel(qnaModel);
-
-      console.log("QnA model loaded successfully!");
-      if (model) {
+    qnaWorker.onmessage = (e) => {
+      if (e.data.type === "loaded") {
         setLoading(false);
-        return;
+      } else if (e.data.type === "result") {
+        setAnswers(
+          e.data.answers.length > 0 ? e.data.answers[0].text : "No answer found"
+        );
       }
     };
-    loadModel();
+
+    return () => qnaWorker.terminate();
   }, []);
 
   const handleAskQuestion = async () => {
-    if (!model) {
-      setError("Model not loaded yet...");
+    if (!worker) {
+      setError("Model is still loading...");
       setTimeout(() => {
         setError("");
       }, 1000);
@@ -69,12 +56,7 @@ const QuestionA = () => {
       return;
     }
 
-    console.log("Context:", context);
-    console.log("Question:", question);
-
-    const predictions = await model.findAnswers(question, context);
-    console.log("Predictions:", predictions);
-    setAnswers(predictions);
+    worker.postMessage({ context, question });
   };
 
   return (
@@ -100,11 +82,11 @@ const QuestionA = () => {
           />
         </Card>
 
-        {loading ? (
+        {/* {loading ? (
           <div>Loading Model...</div>
         ) : (
           <div>Model loaded successfully</div>
-        )}
+        )} */}
         <div className="quest 2xl:w-full 2xl:bg-white 2xl:mt-3">
           <input
             type="text"
@@ -120,19 +102,17 @@ const QuestionA = () => {
           onClick={handleAskQuestion}
           disabled={!model}
         >
-          <div>{model ? "Generate Answer" : "Loading Model..."}</div>
+          <div>{loading ? "Generate Answer" : "Loading Model..."}</div>
         </Button>
 
         <p>{error}</p>
 
         <div className="answers bg-white w-full h-auto mt-9">
-          {answers.length > 0 ? (
-            answers.map((ans, idx) => (
-              <div key={idx}>
-                <h1 className="text-2xl font-bold">Answer:</h1>
-                <p key={idx}>{ans[0].text}</p>
-              </div>
-            ))
+          {answers ? (
+            <div>
+              <h1 className="text-2xl font-bold">Answer:</h1>
+              <p>{answers}</p>
+            </div>
           ) : (
             <p className="text-[20px] p-2 font-[500]">No answers yet</p>
           )}
