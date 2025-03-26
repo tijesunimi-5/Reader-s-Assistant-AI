@@ -39,7 +39,6 @@ const Header = () => {
 
   const toggleMobileBar = () => {
     const mobileBar = document.querySelector(".mobilebar");
-    console.log(mobileBar)
     const bar = document.querySelector(".bar");
     const minus = document.querySelector(".minus");
     //this displays the mobilesidebar
