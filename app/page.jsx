@@ -86,10 +86,22 @@ const page = () => {
           </div>
 
           <div className="icons 2xl:flex 2xl:flex-col 2xl:justify-between 2xl:h-[300px] 2xl:text-3xl 2xl:absolute 2xl:left-[-350px] 2xl:top-[-100px] social-div absolute bottom-10 flex justify-between w-[280px] left-7 text-3xl">
-            <FaTiktok className="2xl:cursor-pointer socials 2xl:transition-all 2xl:bg-transparent 2xl:backdrop:blur-3xl 2xl:shadow" />
-            <FaGithubSquare className="2xl:cursor-pointer socials 2xl:transition-all 2xl:bg-transparent 2xl:backdrop:blur-3xl 2xl:shadow" />
-            <FaLinkedin className="2xl:cursor-pointer socials 2xl:transition-all 2xl:bg-transparent 2xl:backdrop:blur-3xl 2xl:shadow" />
-            <FaTwitterSquare className="2xl:cursor-pointer socials 2xl:transition-all 2xl:bg-transparent 2xl:backdrop:blur-3xl 2xl:shadow" />
+            <Link
+              href={
+                "/https://www.tiktok.com/@codelight01?is_from_webapp=1&sender_device=pc"
+              }
+            >
+              <FaTiktok className="2xl:cursor-pointer socials 2xl:transition-all 2xl:bg-transparent 2xl:backdrop:blur-3xl 2xl:shadow" />
+            </Link>
+            <Link href={"/https://github.com/tijesunimi-5"}>
+              <FaGithubSquare className="2xl:cursor-pointer socials 2xl:transition-all 2xl:bg-transparent 2xl:backdrop:blur-3xl 2xl:shadow" />
+            </Link>
+            <Link href={"/www.linkedin.com/in/idowu-tijesunimi-189492294"}>
+              <FaLinkedin className="2xl:cursor-pointer socials 2xl:transition-all 2xl:bg-transparent 2xl:backdrop:blur-3xl 2xl:shadow" />
+            </Link>
+            <Link href={"/https://x.com/codelight001?s=21"}>
+              <FaTwitterSquare className="2xl:cursor-pointer socials 2xl:transition-all 2xl:bg-transparent 2xl:backdrop:blur-3xl 2xl:shadow" />
+            </Link>
           </div>
         </div>
       </div>
