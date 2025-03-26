@@ -89,7 +89,7 @@ const Header = () => {
             ></span>
           </li>
         </Link>
-        <Link href={"/"}>
+        <Link href={"/Reader-assisstant.ai"}>
           <li className="2xl:text-[1.2em] 2xl:font-[600] 2xl:cursor-pointer 2xl:relative ">
             Q/A{" "}
             <span
