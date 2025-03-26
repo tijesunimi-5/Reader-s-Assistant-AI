@@ -24,10 +24,7 @@ const Guidelines = () => {
           </h1>
           <p className="mt-3 2xl:ml-10 text-[1.18em]">
             In this section, you can copy and paste texts that you'd love to
-            listen to. <br /> Copy text and paste in the input field for{" "}
-            <Link href={"/"} className="underline">
-              Text-to-Speech
-            </Link>
+            listen to. <br /> Copy text and paste in the input field 
             . <br />
             After pasting your text, click on the convert to audio button and
             you should start to listen to the pasted text.
@@ -35,12 +32,7 @@ const Guidelines = () => {
 
           <h2 className="ml-3 mt-4 font-bold text-xl">Demo:</h2>
           <div className="demo-video 2xl:ml-24 mt-7">
-            <video
-              src="/video/RAAI_DEMO.mp4"
-              
-              controls
-              loop
-            ></video>
+            <video src="/video/RAAI_DEMO.mp4" controls loop></video>
           </div>
 
           <div className="extras mt-9 2xl:mx-10 mx-2">
@@ -68,10 +60,7 @@ const Guidelines = () => {
           </h1>
           <p className="mt-3 2xl:ml-10 text-[1.18em]">
             In this section, you can select a PDF file from your file and
-            convert them to text then convert to audio. select pdf file:
-            <Link href={"/"} className="underline">
-              PDF-to-Speech
-            </Link>
+            convert them to text then convert to audio. select pdf file
             . <br />
             After selecting your File, click on the convert to audio button and
             you should start to listen to the selected file.
@@ -80,7 +69,36 @@ const Guidelines = () => {
           <div className="demo-video">
             <h2 className="ml-3 mt-4 font-bold text-xl">Demo:</h2>
 
-            <video src="/video/RAAI_DEMO.mp4" className="2xl:ml-24 mt-7"></video>
+            <video
+              src="/video/PDF_DEMO.mp4"
+              controls
+              loop
+              className="2xl:ml-24 mt-7"
+            ></video>
+          </div>
+        </Card>
+      </div>
+
+      <div className="qna-guide 2xl:mx-10 my-10 mx-5">
+        <Card styles={"p-2"}>
+          <h1 className="text-[2em] 2xl:text-center font-bold">
+            Question and answer Guideline
+          </h1>
+          <p className="mt-3 2xl:ml-10 text-[1.18em]">
+            In this section, you can paste a passage you want to receive answers. You should wait for the model to finish loading before you prompt it for questions.
+            . <br />
+            After pasting the text, provide your question and click on the generate answer button.
+          </p>
+
+          <div className="demo-video">
+            <h2 className="ml-3 mt-4 font-bold text-xl">Demo:</h2>
+
+            <video
+              src="/video/QNA_DEMO.mp4"
+              controls
+              loop
+              className="2xl:ml-24 mt-7"
+            ></video>
           </div>
         </Card>
       </div>
