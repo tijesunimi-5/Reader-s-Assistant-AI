@@ -134,194 +134,67 @@ ul li:hover span {
 }
 .card {
   border-radius: 30px;
-background: linear-gradient(145deg, #3736b5, #4140d7);
-box-shadow:  20px 20px 60px #3433ab,
-             -20px -20px 60px #4645e7;
+  background: linear-gradient(145deg, #3736b5, #4140d7);
+  box-shadow: 20px 20px 60px #3433ab, -20px -20px 60px #4645e7;
 }
 
-/*Responsiveness*/
-/* @media (max-width: 376px) {
-  body {
-    width: 375px;
-  }
-  .header {
-    width: 375px;
-    margin-left: 0;
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-  }
-  .logo {
-    font-size: 18px;
-  }
-  .nav {
-    display: none;
-  }
-  .navBtn {
-    display: none;
-  }
-  .bar {
-    display: block;
-    font-size: 25px;
-  }
-  .mainPage {
-    width: 375px;
-    height: 100vh;
-    overflow: hidden;
-    background: #3d3cc9;
-    position: relative;
-  }
-  .hero-img {
-    position: absolute;
-    bottom: 80px;
-    width: 350px;
-    margin-left: 12px;
-  }
-  .hero-txt {
-    padding-top: 100px;
-    color: white;
-    font-size: 27px;
-    font-weight: 700;
-    margin-left: 20px;
-    position: relative;
-  }
-  .txt2 {
-    position: relative;
-    font-size: 18px;
-    color: white;
-    margin-top: -5px;
-    margin-left: 22px;
-  }
-  .social-div {
-    position: absolute;
-    bottom: 40px;
-    display: flex;
-    justify-content: space-between;
-    width: 250px;
-    color: white;
-    font-size: 28px;
-    margin-left: 62px;
-  }
-  .arrow {
-    position: absolute;
-    top: 95px;
-    left: 180px;
-    color: white;
-  }
-  .info-head {
-    text-align: start;
-    color: #3d3cc9;
-    font-weight: bold;
-    font-size: 24px;
-    padding-top: 80px;
-    padding-left: 12px;
-    width: 365px;
-    text-decoration: underline;
-  }
-  .info-div {
-    width: 370px;
-  }
-  .info-txt {
-    padding: 10px;
-    font-size: 19px;
-  }
-  .info-ul {
-    width: 300px;
-    margin-left: 28px;
-    list-style-type: disc;
-    font-size: 18px;
-  }
-  .info-img1 {
-    width: 550px;
-    margin-top: -40px;
-  }
-  .info-div2 {
-    position: relative;
-    width: 370px;
-    padding-left: 10px;
-  }
-  .info-img2 {
-    position: absolute;
-    bottom: -50px;
-    width: 350px;
-    left: 10px;
-  }
-  .info-head2 {
-    text-align: start;
-    color: #3d3cc9;
-    font-weight: bold;
-    font-size: 24px;
-    width: 360px;
-    text-decoration: underline;
-  }
-  .info-txt2 {
-    font-size: 19px;
-  }
-  .info-ul2 {
-    list-style-type: disc;
-    font-size: 18px;
-    width: 350px;
-    padding-left: 18px;
-  }
-  .info-dir{
-    font-size: 19px;
-    margin-top: 10px;
-  }
-  .info-dir .span {
-    color: #3d3cc9;
-    text-decoration: underline;
-  }
-  .start-div {
-    margin-top: 80px;
-    color: #3d3cc9;
-    font-size: 25px;
-    text-decoration: underline;
-    
-  }
-  .start-h {
-    text-align: center;
-    font-weight: 600;
-    font-size: 27px;
-    margin-bottom: 14px;
-  }
-  .cardBlur {
-    width: 330px;
-    margin-left: 25px;
-    margin-bottom: 40px;
-    padding-left: 10px;
-    padding-bottom: 5px;
-  }
-  .cardDiv {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .footer {
-    background: #3d3cc9;
-    color: white;
-  }
-  .footerh {
-    font-size: 18px;
-  }
-  .footerl, .footerl2 {
-    display: flex;
-    flex-direction: column;
-    margin-left: 20px;
-  }
-  .footerl2 {
-    position: absolute;
-    bottom: 95px;
-    right: 20px;
-  }
-  .footerform {
-    display: flex;
-    padding-bottom: 10px;
-    margin-left: 20px;
-    margin-top: 25px;
-  }
-  .f1 {
-    display: flex;
-    margin-right: 20px;
-  }
-} */
+/* From Uiverse.io by Jaareet */
+.input {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  font-weight: 500;
+  font-size: 1em;
+  color: #fff;
+  background-color: transparent;
+  /* backdrop-filter: blur(20px); */
+  box-shadow: 0 0 0.4vw rgba(0, 0, 0, 0.5), 0 0 0 0.15vw transparent;
+  border-radius: 0.4vw;
+  border: none;
+  outline: none;
+  padding: 0.4vw;
+  max-width: 300px;
+  transition: 0.4s;
+}
+
+.input:hover {
+  box-shadow: 0 0 0 0.15vw rgba(135, 207, 235, 0.186);
+}
+
+.input:focus {
+  box-shadow: 0 0 0 0.15vw skyblue;
+}
+
+/* From Uiverse.io by kamehame-ha */ 
+.coolinput {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  position: static;
+  max-width: 240px;
+}
+
+.coolinput label.text {
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 700;
+  position: relative;
+  top: 0.5rem;
+  margin: 0 0 0 7px;
+  padding: 0 3px;
+  background: transparent;
+  width: fit-content;
+}
+
+.coolinput input[type=text].input {
+  padding: 11px 10px;
+  font-size: 0.75rem;
+  border: 2px #fff solid;
+  border-radius: 5px;
+  background: transparent;
+}
+
+.coolinput input[type=text].input:focus {
+  outline: none;
+}
+
