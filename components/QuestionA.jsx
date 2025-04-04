@@ -4,7 +4,6 @@ import Card from "./Card";
 import Button from "./Button";
 import * as qna from "@tensorflow-models/qna";
 import * as tf from "@tensorflow/tfjs";
-import { set } from "mongoose";
 
 const QuestionA = () => {
   const [model, setModel] = useState(null);

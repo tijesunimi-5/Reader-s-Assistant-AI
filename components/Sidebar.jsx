@@ -73,13 +73,30 @@ const Sidebar = () => {
   };
 
   useEffect(() => {
-    const voiceModel = new SpeechSynthesisUtterance();
-    voiceModel.text = `Hello, Welcome to Reader's assistant, I'm Adam and I will be your Personal AI assistant.`;
+    const speak = () => {
+      const voices = window.speechSynthesis.getVoices();
+      if (!voices.length) return;
 
-    voiceModel.lang = "en-US";
-    voiceModel.voice = window.speechSynthesis.getVoices()[0];
+      const voiceModel = new SpeechSynthesisUtterance();
+      voiceModel.text = `Hello, Welcome to Reader's assistant, I will be your Personal AI assistant.`;
+      voiceModel.lang = "en-US";
 
-    window.speechSynthesis.speak(voiceModel);
+      // Prefer a specific voice if available
+      const preferredVoice = voices.find(
+        (voice) =>
+          voice.name.includes("Google US English") || voice.lang === "en-US"
+      );
+
+      voiceModel.voice = preferredVoice || voices[0]; // fallback
+      window.speechSynthesis.speak(voiceModel);
+    };
+
+    // Some browsers load voices asynchronously
+    if (window.speechSynthesis.getVoices().length === 0) {
+      window.speechSynthesis.onvoiceschanged = speak;
+    } else {
+      speak();
+    }
   }, []);
 
   return (

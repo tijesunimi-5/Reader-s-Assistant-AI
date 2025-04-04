@@ -9,11 +9,11 @@ const MobileBar = () => {
     const mobileBar = document.querySelector(".mobilebar");
     const headerBar = document.querySelector(".bar");
     const headerMinus = document.querySelector(".minus");
-    if(mobileBar.classList.contains('active')) {
-      mobileBar.classList.remove('active')
-      mobileBar.style.marginLeft = '-300px';
-      headerBar.style.display = 'flex'
-      headerMinus.style.display = 'none'
+    if (mobileBar.classList.contains("active")) {
+      mobileBar.classList.remove("active");
+      mobileBar.style.marginLeft = "-300px";
+      headerBar.style.display = "flex";
+      headerMinus.style.display = "none";
     }
   };
 
