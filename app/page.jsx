@@ -166,13 +166,13 @@ const page = () => {
               >
                 Guidelines
               </Link>
-              , and leave a{" "}
+              {/* , and leave a{" "}
               <Link
                 href={"/feedback"}
                 className="underline text-[#3D33C9] 2xl:font-semibold span"
               >
                 Review
-              </Link>
+              </Link> */}
             </p>
           </div>
         </div>
